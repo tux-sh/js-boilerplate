@@ -1,0 +1,94 @@
+:root {
+    --green-color: #31bc86;
+    --grey-color: #8c99a7;
+    --blue-color: #5396d8;
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-display: auto;
+    src: local('Lato Light'), local('Lato-Light'), url('../fonts/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: local('Lato Regular'), local('Lato-Regular'), url('../fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: auto;
+    src: local('Lato Bold'), local('Lato-Bold'), url('../fonts/Lato-Bold.ttf') format('truetype');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato';
+    text-rendering: geometricPrecision;
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#root {
+    position: fixed;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    background-image: linear-gradient(to right, color-mod(var(--green-color) alpha(25%)), color-mod(var(--blue-color) alpha(25%)));
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+    & span {
+        background-color: color-mod(var(--green-color) alpha(15%));
+        color: #fff;
+        font-weight: 100;
+        font-size: 1.75em;
+        padding: 0.5em 1.5em;
+    }
+}
+
+button {
+    font-weight: 100;
+    font-size: 1.75em;
+    font-family: 'Lato';
+    border-radius: 1.75em;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    background-color: color-mod(var(--green-color) alpha(15%));
+    color: color-mod(var(--green-color) alpha(75%));
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.75);
+        background-color: color-mod(var(--green-color) alpha(65%));
+    }
+
+    &:first-child {
+        border-radius: 1.75em 0 0 1.75em;
+    }
+
+    &:last-child {
+        border-radius: 0 1.75em 1.75em 0;
+    }
+}
